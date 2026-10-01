@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171a20">
+    <title>Territory War</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/game.js" defer></script>
+  </head>
+  <body>
+    <main class="game">
+      <header class="game__header">
+        <p class="game__eyebrow">A two-player board game</p>
+        <h1>Territory <span>War</span></h1>
+        <p id="status" class="game__status" aria-live="polite">Connecting to the game...</p>
+      </header>
+
+      <div class="mode-control">
+        <button id="mode-toggle" class="mode-control__button" type="button" aria-pressed="false">Play vs Computer</button>
+        <span id="mode-label" class="mode-control__label">Two-player game</span>
+      </div>
+
+      <section class="scoreboard" aria-label="Current scores">
+        <p class="scoreboard__item scoreboard__item--one">Player One <strong id="score-one">0</strong></p>
+        <p class="scoreboard__item scoreboard__item--two"><span id="score-two-label">Player Two</span> <strong id="score-two">0</strong></p>
+      </section>
+
+      <section id="result" class="result" aria-live="assertive" hidden>
+        <p id="result-message" class="result__message"></p>
+        <button id="play-again" class="result__button" type="button">Play again</button>
+      </section>
+
+      <section class="arena" aria-label="Game board">
+        <div id="board" class="board" role="grid" aria-label="10 by 10 territory board"></div>
+      </section>
+
+      <footer class="legend" aria-label="Players">
+        <span class="legend__player"><i class="legend__swatch legend__swatch--one"></i>Player One</span>
+        <span class="legend__player"><i class="legend__swatch legend__swatch--two"></i>Player Two</span>
+      </footer>
+    </main>
+    <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+  </body>
+</html>
